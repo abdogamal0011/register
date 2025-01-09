@@ -1,0 +1,64 @@
+<section >
+<div class="caption">
+<h1 class="text-white fw-bold ">Learn to code by Watching others</h1>
+<p class="text-white ">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius obcaecati aspernatur dolores, eligendi in aperiam quasi atque repellat, consequatur possimus neque tenetur corrupti perferendis inventore ex? Corporis debitis accusamus in.</p>
+</div>
+
+<div class="signup-form-container ">
+  <div class="freeOffer text-center shadow rounded">
+    <p class="m-0 small p-2"> <b>Lorem ipsum, dolor</b> sit amet consectetur </p>
+  </div>
+  <form [formGroup]="signupForm" (ngSubmit)="onSubmit()" class="bg-white shadow  rounded ">
+    <div class="position-relative">
+      <input placeholder="First Name" class="form-control " id="firstName" formControlName="firstName" />
+      @if (signupForm.get('firstName')?.invalid && signupForm.get('firstName')?.touched) {
+
+        <div class=" error d-flex justify-content-end align-items-center">
+          <small class="text-danger small ">{{ getErrorMessage('firstName') }}</small>
+          <img [src]="image" class="position-absolute " alt="" srcset="">
+        </div>
+      }
+    </div>
+
+    <div class="position-relative">
+      <input placeholder="Email" class="form-control" id="email" formControlName="email" />
+      @if (signupForm.get('email')?.invalid && signupForm.get('email')?.touched) {
+
+        <div class="error d-flex justify-content-end align-items-center">
+
+          <small class="text-danger small ">{{ getErrorMessage('email') }}</small>
+          <img [src]="image" class="position-absolute " alt="" srcset="">
+
+        </div>
+      }
+    </div>
+
+    <div class="position-relative">
+      <input placeholder="Password" class="form-control" type="password" id="password" formControlName="password" />
+      @if (signupForm.get('password')?.invalid && signupForm.get('password')?.touched) {
+
+        <div class="error d-flex justify-content-end align-items-center">
+          <img [src]="image" class="position-absolute " alt="" srcset="">
+
+          <small class="text-danger small ">{{ getErrorMessage('password') }}</small>
+        </div>
+      }
+    </div>
+
+    <div class="position-relative">
+      <input placeholder="Confirm Password" class="form-control" type="password" id="confirmPassword" formControlName="confirmPassword" />
+      @if (signupForm.get('confirmPassword')?.invalid && signupForm.get('confirmPassword')?.touched) {
+        <div class="error d-flex justify-content-end align-items-center">
+          <img [src]="image" class="position-absolute " alt="" srcset="">
+
+          <small class="text-danger small ">{{ getErrorMessage('confirmPassword') }}</small>
+        </div>
+      }
+    </div>
+
+    <button class="w-100 btn  " type="submit" [disabled]="signupForm.invalid">Sign Up</button>
+    <p class="small text-center p-2 m-0">Lorem ipsum dolor<span class="text-danger">sit amet consectetur adipisicing.</span></p>
+  </form>
+</div>
+
+</section>
